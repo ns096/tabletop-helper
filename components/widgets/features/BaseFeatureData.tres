@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c0k1a3wsxtsui"]
+
+[ext_resource type="Script" path="res://components/widgets/features/BaseFeatureData.gd" id="1_nvda6"]
+
+[resource]
+script = ExtResource("1_nvda6")

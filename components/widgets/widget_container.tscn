@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cah1tcplj5sc2"]
+
+[ext_resource type="Theme" uid="uid://b5xppnccr2ldb" path="res://assets/themes/mobile_ui.tres" id="1_8twsm"]
+[ext_resource type="Script" path="res://components/widgets/widget_container.gd" id="1_kh0x3"]
+
+[node name="widget_container" type="MarginContainer"]
+anchors_preset = -1
+anchor_right = 0.048
+anchor_bottom = 0.037
+offset_top = -1.0
+offset_right = -31.84
+offset_bottom = -51.04
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_kh0x3")
+
+[node name="abc" type="PanelContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("1_8twsm")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "asdsadsadasd"

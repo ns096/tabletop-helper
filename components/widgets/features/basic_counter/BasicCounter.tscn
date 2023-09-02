@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx6brfqfw0lge"]
+
+[ext_resource type="Theme" uid="uid://b5xppnccr2ldb" path="res://assets/themes/mobile_ui.tres" id="1_aetk5"]
+[ext_resource type="Script" path="res://components/widgets/features/basic_counter/BasicCounter.gd" id="1_r33wh"]
+
+[node name="BasicCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -789.0
+offset_bottom = -1743.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_r33wh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 289.0
+offset_bottom = 177.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="plus1" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_aetk5")
+text = "+1"
+
+[node name="minus1" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_aetk5")
+text = "-1"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="plus10" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_aetk5")
+text = "+10"
+
+[node name="minus10" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_aetk5")
+text = "-10"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 289.0
+offset_bottom = 176.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme = ExtResource("1_aetk5")
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/plus1" to="." method="_on_plus_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/minus1" to="." method="_on_minus_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/plus10" to="." method="_on_plus_10_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/minus10" to="." method="_on_minus_10_pressed"]

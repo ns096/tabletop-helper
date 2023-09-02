@@ -1,0 +1,100 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://b5xppnccr2ldb"]
+
+[ext_resource type="FontFile" uid="uid://cgp0l2gr73ksg" path="res://assets/fonts/Merriweather-Black.ttf" id="1_3bdwu"]
+[ext_resource type="Texture2D" uid="uid://c4a1mpbamamvr" path="res://assets/google_material_icons/check_box_FILL0_wght500_GRAD200_opsz40.svg" id="1_qmr14"]
+[ext_resource type="Texture2D" uid="uid://7sivhdsf1jak" path="res://assets/google_material_icons/cancel_FILL0_wght500_GRAD200_opsz40.svg" id="2_ihoa2"]
+[ext_resource type="Texture2D" uid="uid://b7dfa4um31ki6" path="res://assets/google_material_icons/check_box_outline_blank_FILL0_wght500_GRAD200_opsz40.svg" id="4_1k1w8"]
+[ext_resource type="StyleBox" uid="uid://dqhhnvyqgu1we" path="res://assets/RoundedCornerHoverStyleBox.tres" id="5_1x5ri"]
+[ext_resource type="Texture2D" uid="uid://b7wotqmsq8a67" path="res://assets/google_material_icons/unfold_more_FILL0_wght500_GRAD200_opsz40.svg" id="5_hmukc"]
+[ext_resource type="StyleBox" uid="uid://bqrtw5pmnckbg" path="res://assets/RoundedCornerStyleBox.tres" id="5_klg86"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i0jh5"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghrf4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4neix"]
+bg_color = Color(0.776471, 0.752941, 0.721569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.7, 0.7, 0.7, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3ny1"]
+bg_color = Color(0.733333, 0.733333, 0.733333, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0117647, 0.0117647, 0.0117647, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+default_font_size = 32
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_3bdwu")
+CheckBox/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+CheckBox/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+CheckBox/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+CheckBox/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+CheckBox/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_outline_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckBox/constants/h_separation = 0
+CheckBox/fonts/font = ExtResource("1_3bdwu")
+CheckBox/icons/checked = ExtResource("1_qmr14")
+CheckBox/icons/checked_disabled = ExtResource("1_qmr14")
+CheckBox/icons/radio_checked = ExtResource("2_ihoa2")
+CheckBox/icons/unchecked = ExtResource("4_1k1w8")
+CheckBox/icons/unchecked_disabled = ExtResource("4_1k1w8")
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_i0jh5")
+CheckBox/styles/focus = SubResource("StyleBoxFlat_ghrf4")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_i0jh5")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_i0jh5")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_i0jh5")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_i0jh5")
+Label/colors/font_color = Color(0.0392157, 0.027451, 0.0235294, 1)
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_3bdwu")
+Label/styles/normal = SubResource("StyleBoxFlat_4neix")
+MarginContainer/constants/margin_bottom = 5
+MarginContainer/constants/margin_left = 5
+MarginContainer/constants/margin_right = 5
+MarginContainer/constants/margin_top = 5
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_k3ny1")
+PopupMenu/font_sizes/font_size = 36
+PopupMenu/fonts/font = ExtResource("1_3bdwu")
+PopupMenu/styles/hover = ExtResource("5_1x5ri")
+PopupMenu/styles/panel = ExtResource("5_klg86")
+SpinBox/icons/updown = ExtResource("5_hmukc")
+TextEdit/fonts/font = ExtResource("1_3bdwu")

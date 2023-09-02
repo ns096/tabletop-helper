@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxd0cqjdl6fd2"]
+
+[ext_resource type="Script" path="res://components/core/widget_page.gd" id="1_3fhkb"]
+[ext_resource type="Texture2D" uid="uid://cwbkd2aas3iff" path="res://assets/2x/return.png" id="1_j2kho"]
+[ext_resource type="Theme" uid="uid://b5xppnccr2ldb" path="res://assets/themes/mobile_ui.tres" id="1_lh4r5"]
+[ext_resource type="Texture2D" uid="uid://dgtjjp2uq6oks" path="res://assets/2x/wrench.png" id="2_67hxd"]
+[ext_resource type="Texture2D" uid="uid://ccc2dnh25qoe7" path="res://assets/2x/save.png" id="3_5og7q"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.333333, 0.333333, 0.329412, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Container" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+script = ExtResource("1_3fhkb")
+
+[node name="PopupMenu" type="PopupMenu" parent="VBoxContainer/Container"]
+title = "Select a widget to add"
+size = Vector2i(300, 100)
+item_count = 1
+item_0/text = "Basic Widget"
+item_0/id = 0
+
+[node name="BasicWidget" type="Button" parent="VBoxContainer/Container/PopupMenu"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Basic Widget"
+
+[node name="Menu" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Reset" type="Button" parent="VBoxContainer/Menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_lh4r5")
+text = "Reset"
+icon = ExtResource("1_j2kho")
+icon_alignment = 2
+
+[node name="Edit" type="Button" parent="VBoxContainer/Menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_lh4r5")
+text = "Edit"
+icon = ExtResource("2_67hxd")
+icon_alignment = 2
+
+[node name="Save" type="Button" parent="VBoxContainer/Menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_lh4r5")
+text = "Save"
+icon = ExtResource("3_5og7q")
+icon_alignment = 2
+
+[connection signal="pressed" from="VBoxContainer/Container/PopupMenu/BasicWidget" to="VBoxContainer/Container" method="_on_basic_widget_pressed"]

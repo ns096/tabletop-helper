@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx1qronu2ky18"]
+
+[ext_resource type="Texture2D" uid="uid://p50yogli2cc4" path="res://assets/Default (64px)/cards_fan.png" id="1_tdsjj"]
+[ext_resource type="Texture2D" uid="uid://ccc2dnh25qoe7" path="res://assets/2x/save.png" id="2_skdin"]
+[ext_resource type="Texture2D" uid="uid://w8n4kjrn18xu" path="res://assets/2x/trashcanOpen.png" id="3_0n06t"]
+
+[node name="save_box" type="Container"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2i(1077, 333)
+layout_mode = 2
+offset_right = 349.0
+offset_bottom = 238.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.494118, 0.545098, 0.619608, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2i(1080, 298)
+layout_mode = 2
+offset_right = 296.0
+offset_bottom = 165.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Date" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+offset_right = 1080.0
+offset_bottom = 26.0
+
+[node name="Time" type="Label" parent="VBoxContainer/Date"]
+layout_mode = 2
+offset_right = 41.0
+offset_bottom = 26.0
+text = "13:42"
+
+[node name="Date2" type="Label" parent="VBoxContainer/Date"]
+layout_direction = 3
+layout_mode = 2
+offset_left = 948.0
+offset_right = 1035.0
+offset_bottom = 26.0
+text = " 13.03.2022"
+
+[node name="SaveName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 1080.0
+offset_bottom = 56.0
+text = "Save Slot #1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+offset_top = 60.0
+offset_right = 1080.0
+offset_bottom = 168.0
+
+[node name="Delete" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+offset_right = 108.0
+offset_bottom = 108.0
+icon = ExtResource("3_0n06t")
+alignment = 2
+
+[node name="Save" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+offset_left = 112.0
+offset_right = 220.0
+offset_bottom = 108.0
+icon = ExtResource("2_skdin")
+
+[node name="Copy" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+offset_left = 224.0
+offset_right = 296.0
+offset_bottom = 108.0
+icon = ExtResource("1_tdsjj")
