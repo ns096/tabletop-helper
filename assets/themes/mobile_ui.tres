@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c4a1mpbamamvr" path="res://assets/google_material_icons/check_box_FILL0_wght500_GRAD200_opsz40.svg" id="1_qmr14"]
 [ext_resource type="Texture2D" uid="uid://7sivhdsf1jak" path="res://assets/google_material_icons/cancel_FILL0_wght500_GRAD200_opsz40.svg" id="2_ihoa2"]
 [ext_resource type="Texture2D" uid="uid://b7dfa4um31ki6" path="res://assets/google_material_icons/check_box_outline_blank_FILL0_wght500_GRAD200_opsz40.svg" id="4_1k1w8"]
-[ext_resource type="StyleBox" uid="uid://dqhhnvyqgu1we" path="res://assets/RoundedCornerHoverStyleBox.tres" id="5_1x5ri"]
+[ext_resource type="StyleBox" uid="uid://dqhhnvyqgu1we" path="res://assets/themes/RoundedCornerHoverStyleBox.tres" id="5_e77pt"]
 [ext_resource type="Texture2D" uid="uid://b7wotqmsq8a67" path="res://assets/google_material_icons/unfold_more_FILL0_wght500_GRAD200_opsz40.svg" id="5_hmukc"]
-[ext_resource type="StyleBox" uid="uid://bqrtw5pmnckbg" path="res://assets/RoundedCornerStyleBox.tres" id="5_klg86"]
+[ext_resource type="StyleBox" uid="uid://bqrtw5pmnckbg" path="res://assets/themes/RoundedCornerStyleBox.tres" id="6_rlhhh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i0jh5"]
 content_margin_left = 4.0
@@ -61,7 +61,7 @@ corner_radius_bottom_left = 8
 
 [resource]
 default_font_size = 32
-Button/font_sizes/font_size = 32
+Button/font_sizes/font_size = 46
 Button/fonts/font = ExtResource("1_3bdwu")
 CheckBox/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 CheckBox/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
@@ -84,7 +84,7 @@ CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_i0jh5")
 CheckBox/styles/normal = SubResource("StyleBoxEmpty_i0jh5")
 CheckBox/styles/pressed = SubResource("StyleBoxEmpty_i0jh5")
 Label/colors/font_color = Color(0.0392157, 0.027451, 0.0235294, 1)
-Label/font_sizes/font_size = 32
+Label/font_sizes/font_size = 46
 Label/fonts/font = ExtResource("1_3bdwu")
 Label/styles/normal = SubResource("StyleBoxFlat_4neix")
 MarginContainer/constants/margin_bottom = 5
@@ -92,9 +92,9 @@ MarginContainer/constants/margin_left = 5
 MarginContainer/constants/margin_right = 5
 MarginContainer/constants/margin_top = 5
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_k3ny1")
-PopupMenu/font_sizes/font_size = 36
+PopupMenu/font_sizes/font_size = 46
 PopupMenu/fonts/font = ExtResource("1_3bdwu")
-PopupMenu/styles/hover = ExtResource("5_1x5ri")
-PopupMenu/styles/panel = ExtResource("5_klg86")
+PopupMenu/styles/hover = ExtResource("5_e77pt")
+PopupMenu/styles/panel = ExtResource("6_rlhhh")
 SpinBox/icons/updown = ExtResource("5_hmukc")
 TextEdit/fonts/font = ExtResource("1_3bdwu")

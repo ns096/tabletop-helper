@@ -10,7 +10,6 @@ var label_template = $Label
 var checkbox_template = $CheckBox
 
 
-
 const LABEL = "label_content"
 const NUMBER_OF_CHECKBOXES = "number_of_checkboxes"
 const default = [
@@ -28,25 +27,12 @@ const default = [
 		}
 	]
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	_init_popup()
-	construct_widget(default)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	_hold(delta)
-
-func build(pageSteps: Vector2, pagePosition: Vector2):
-	pass
-
-func _gui_input(event):
-	_hold_input(event)
 	
-func construct_widget(widget_data:Array):
-	for data in widget_data:
-		create_row(data.label_content, data.number_of_checkboxes)
-
+func _build_extra(data:Array):
+	if data.is_empty():
+		data = default
+	for feature in data:
+		create_row(feature.label_content, feature.number_of_checkboxes)
 
 func create_row(label_content: String,number_of_checkboxes: int):
 	var hbox = HBoxContainer.new()

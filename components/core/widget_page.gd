@@ -3,7 +3,6 @@ extends Container
 var COLUMNS = 4
 var ROWS = 6
 var widgets = []
-var widget_steps: Vector2
 
 const HOLD_TIME_REQUIRED = 0.6
 var event_position: Vector2
@@ -17,9 +16,14 @@ var widget_types: Array[Resource]
 var AddWidgetPopup: PopupMenu = $AddWidgetPopup
 
 func _ready():
+
 	var parent = get_parent()
-	widget_steps.x = int(parent.size.x / COLUMNS)
-	widget_steps.y = int(parent.size.y / ROWS)
+	page_steps.x = int(parent.size.x / COLUMNS)
+	page_steps.y = int(parent.size.y / ROWS)
+	for item in AddWidgetPopup.item_count:
+		
+		AddWidgetPopup.remove_item(item)
+		
 	for widget in $AllWidgets.get_children():
 		AddWidgetPopup.add_check_item(widget.name)
 	AddWidgetPopup.id_pressed.connect(_on_popupmenu_pressed)
@@ -42,13 +46,12 @@ func _process(delta):
 			popup()
 
 func _gui_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				holding = true
+	if ((event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT) or event is InputEventScreenTouch):
+		if event.pressed:
+			holding = true
 	else:
 		holding = false
-	
+
 func popup():
 	AddWidgetPopup.popup_centered()
 
@@ -81,20 +84,23 @@ func updateWidgetPositions():
 		var xpos = (i % COLUMNS)
 		var ypos = int(i / COLUMNS)
 		
-		position.x = xpos * widget_steps.x
-		position.y = ypos * widget_steps.y
+		position.x = xpos * page_steps.x
+		position.y = ypos * page_steps.y
 		widget.position = position
-		
-
 
 
 func _on_popupmenu_pressed(id: int):
 	var path = ""
 
 	var Widget =$AllWidgets.get_child(id).duplicate()
+	# get panel container
+	var WidgetScript: BaseWidget = Widget.get_node("PanelContainer")
+
 	print(Widget)
 	add_child(Widget)
-	Widget.position = event_position
-	
+	Widget.owner = self
+	# change widget data after adding to the tree
+	Widget.global_position = event_position
+	WidgetScript.build(page_steps, [])
 	
 	

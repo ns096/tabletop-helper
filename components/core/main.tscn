@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxd0cqjdl6fd2"]
+[gd_scene load_steps=8 format=3 uid="uid://bxd0cqjdl6fd2"]
 
 [ext_resource type="Script" path="res://components/core/widget_page.gd" id="1_3fhkb"]
 [ext_resource type="Texture2D" uid="uid://cwbkd2aas3iff" path="res://assets/2x/return.png" id="1_j2kho"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://da31532envhbx" path="res://components/widgets/basic_widget/basic_widget.tscn" id="2_1o1qw"]
 [ext_resource type="Texture2D" uid="uid://dgtjjp2uq6oks" path="res://assets/2x/wrench.png" id="2_67hxd"]
 [ext_resource type="Texture2D" uid="uid://ccc2dnh25qoe7" path="res://assets/2x/save.png" id="3_5og7q"]
+[ext_resource type="Script" path="res://components/core/menu.gd" id="3_m7pxl"]
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -33,21 +34,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_m7pxl")
 
-[node name="Container" type="Container" parent="VBoxContainer"]
+[node name="WidgetPage" type="Container" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 10.0
 script = ExtResource("1_3fhkb")
 
-[node name="AddWidgetPopup" type="PopupMenu" parent="VBoxContainer/Container"]
+[node name="AddWidgetPopup" type="PopupMenu" parent="VBoxContainer/WidgetPage"]
 size = Vector2i(300, 100)
 
-[node name="AllWidgets" type="Control" parent="VBoxContainer/Container"]
+[node name="AllWidgets" type="Control" parent="VBoxContainer/WidgetPage"]
 visible = false
 layout_mode = 2
 
-[node name="Basic Widget" parent="VBoxContainer/Container/AllWidgets" instance=ExtResource("2_1o1qw")]
+[node name="Basic Widget" parent="VBoxContainer/WidgetPage/AllWidgets" instance=ExtResource("2_1o1qw")]
 layout_mode = 2
 
 [node name="Menu" type="HBoxContainer" parent="VBoxContainer"]
@@ -78,3 +80,6 @@ theme = ExtResource("1_lh4r5")
 text = "Save"
 icon = ExtResource("3_5og7q")
 icon_alignment = 2
+
+[connection signal="pressed" from="VBoxContainer/Menu/Reset" to="VBoxContainer" method="_on_reset_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu/Save" to="VBoxContainer" method="_on_save_pressed"]

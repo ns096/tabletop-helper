@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bx6brfqfw0lge"]
 
-[ext_resource type="Theme" uid="uid://b5xppnccr2ldb" path="res://assets/themes/mobile_ui.tres" id="1_aetk5"]
-[ext_resource type="Script" path="res://components/widgets/features/basic_counter/BasicCounter.gd" id="1_r33wh"]
+[ext_resource type="Script" path="res://components/widgets/basic_counter/BasicCounter.gd" id="1_55nn6"]
+[ext_resource type="Theme" uid="uid://b5xppnccr2ldb" path="res://assets/themes/mobile_ui.tres" id="2_w63td"]
 
 [node name="BasicCounter" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ offset_bottom = -1743.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_r33wh")
+script = ExtResource("1_55nn6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -27,13 +27,13 @@ size_flags_horizontal = 3
 [node name="plus1" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("1_aetk5")
+theme = ExtResource("2_w63td")
 text = "+1"
 
 [node name="minus1" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("1_aetk5")
+theme = ExtResource("2_w63td")
 text = "-1"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
@@ -43,13 +43,13 @@ size_flags_horizontal = 3
 [node name="plus10" type="Button" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("1_aetk5")
+theme = ExtResource("2_w63td")
 text = "+10"
 
 [node name="minus10" type="Button" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("1_aetk5")
+theme = ExtResource("2_w63td")
 text = "-10"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -60,7 +60,7 @@ mouse_filter = 2
 
 [node name="Label" type="Label" parent="CenterContainer"]
 layout_mode = 2
-theme = ExtResource("1_aetk5")
+theme = ExtResource("2_w63td")
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
